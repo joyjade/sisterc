@@ -1,0 +1,110 @@
+/* GLOBAL */
+:root {
+  --main-font: 'Junicode', Times, serif;
+  --sans: "Untitled Sans", Arial, Helvetica, sans-serif;
+  --primary-color: #E3E3E3;
+  --secondary-color: #FF3C3;
+  --thin-border: 1.5px solid var(--primary-color);
+  --spacing: 1rem 1.5rem;
+
+  --real-vh: 100vh;
+ }
+ 
+ @font-face {
+  font-family: "Junicode";
+  font-style: normal;
+  src: url("/fonts/junicode-regular-webfont.woff") format("woff"),
+}
+
+
+ /* RESETS */
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:focus {
+	outline: thin dotted;
+}
+
+::selection {
+	background-color: var(--secondary-color);
+	color: white;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* STYLES */
+
+body {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  font-family: var(--main-font);
+  background: var(--primary-color);
+}
+
+nav {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+h1.title {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  font-weight: 400;
+}
+
+h1.title, .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.upper {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.lower {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+.right {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.left {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.image img {
+  width: 30%;
+}
