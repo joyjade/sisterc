@@ -72,7 +72,6 @@ body {
   font-family: var(--main-font);
   background: var(--primary-color);
   text-align: center;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,7 +133,12 @@ ol li {
 
 @media screen and (max-width: 500px) {
  h3 {
-  bottom: 160px;
+  max-width: 55vw;
+  text-align: left;
+ }
+
+ .pin figure {
+  max-width: 40vw;
  }
 
 }
