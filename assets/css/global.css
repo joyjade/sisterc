@@ -1,9 +1,9 @@
 /* GLOBAL */
 :root {
   --main-font: 'Junicode', Times, serif;
-  --sans: "Untitled Sans", Arial, Helvetica, sans-serif;
+  --sans: "CircledNo", Arial, Helvetica, serif;
   --primary-color: #E3E3E3;
-  --secondary-color: #FF3C3;
+  --secondary-color: #FF3C3C;
   --thin-border: 1.5px solid var(--primary-color);
   --spacing: 1rem 1.5rem;
 
@@ -13,7 +13,12 @@
  @font-face {
   font-family: "Junicode";
   font-style: normal;
-  src: url("/fonts/junicode-regular-webfont.woff") format("woff"),
+  src: url("assets/fonts/junicode-regular-webfont.woff") format("woff"),
+}
+
+@font-face {
+  font-family: "CircledNo";
+  src: url("assets/fonts/Circ-Regular.woff") format("woff");
 }
 
 
@@ -52,41 +57,125 @@ img {
   max-width: 100%;
 }
 
+p {
+  font-family: var(--sans);
+}
 
 /* STYLES */
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
 body {
+  position: relative;
+  font-family: var(--main-font);
+  background: var(--primary-color);
+  text-align: center;
+
   display: grid;
   height: 100vh;
   width: 100vw;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  font-family: var(--main-font);
-  background: var(--primary-color);
+  
 }
 
-nav {
-  grid-column: 1 / 4;
-  grid-row: 3 / 4;
+/* nav {
   display: flex;
   align-items: flex-end;
-  padding: 1rem;
+  padding: 1.3rem;
   justify-content: space-between;
   font-size: 1.4rem;
-}
-
-h1.title {
+  } */
+  
+  
+  h1.title {
   grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  font-weight: 400;
-}
-
-h1.title, .image {
+  grid-row: 1 / 2;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 1rem;
+}
+
+
+section {
+  padding-top: 4rem;
+  width: 500px;
+  margin: 0 auto;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+
+h3 {
+  /* font-style: italic; */
+  padding-top: 1rem;
+  font-size: 1.3rem;
+
+}
+
+h3:first-of-type {
+  position: fixed;
+  bottom: 13px;
+  left: 15px;
+}
+
+h3:last-of-type{
+  grid-column: 2/3;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+figure.book {
+  width: 150px;
   text-align: center;
 }
+
+.pin figure {
+  display: flex;
+  width: 200px;
+  position: fixed;
+  bottom: 13px;
+  right: 20px;
+  left: unset; 
+}
+
+.pin figcaption {
+  transform: translateX(-7px);
+  font-size: 1.5rem;
+}
+ol, ul {
+  counter-reset: list;
+  position: relative;
+  list-style: none;
+}
+
+ol li {
+  font-style: italic;
+  padding-top: 1rem;
+  font-size: 1.6rem;
+}
+/* 
+ol li::before {
+  counter-increment: list;
+  content: counter(list);
+  font-weight: normal;
+  font-style: normal;
+  margin: auto 0.3rem;
+  font-size: 1rem;
+  font-family: 'CircledNo';
+} */
+
+
+
+
+
 
 .upper {
   grid-column: 2 / 3;
@@ -103,8 +192,4 @@ h1.title, .image {
 .left {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-}
-
-.image img {
-  width: 30%;
 }
